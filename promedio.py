@@ -12,8 +12,8 @@ while True:
         print("¡Acceso concedido!")
         for materia, nota in sistema[p].items():
             promedio = sum(sistema[p].values()) / len(sistema[p])
-
+            
+        print(f"promedio de {p} es: {promedio:.2f}")
     else:
         print("Incorrecto. Inténtalo de nuevo.")
-        
-    print(f"promedio de {p} es: {promedio:.2f}")
+
