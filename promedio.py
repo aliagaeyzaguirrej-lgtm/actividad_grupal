@@ -9,11 +9,11 @@ while True:
     p = input("introduce el nombre del alumno ").capitalize()
 
     if p in sistema:
-        print("¡Acceso concedido!")
+        print("Alumno encontrado.")
         for materia, nota in sistema[p].items():
             promedio = sum(sistema[p].values()) / len(sistema[p])
-            
+
         print(f"promedio de {p} es: {promedio:.2f}")
     else:
-        print("Incorrecto. Inténtalo de nuevo.")
+        print("Alumno no encontrado. Inténtalo de nuevo.")
 
