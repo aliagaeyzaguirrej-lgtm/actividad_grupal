@@ -1,0 +1,8 @@
+frase = input("escrobe una frase:").lower()
+contador_a = 0
+
+for letra in frase:
+    if letra in frase:
+        if letra == "a":
+        contador_a += 1
+print(f"la letra ´a´ aparece (contadpr_a)veces. ")
