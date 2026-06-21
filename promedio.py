@@ -7,10 +7,18 @@ sistema = {
 sistema2 = {"Sofia": {"matematicas": 90, "Datos y algoritmos": 80, "Habilidades TIC": 85},
 }
 while True:
-    print("Bienvenido elige si quieres saber el promedio de los alumnos nuevos(1) o saber el promedio de un alumno Ya registrados(2).")
+    print(" (1) si quieres saber el promedio de los alumnos nuevos")
+    print(" (2) si quieres saber el promedio de un alumno ya registrado")
+    print(" (3) para salir del programa.")
+
     choice = input("Elige una opción: ")
 
-    if choice == "1":
+    if choice == "3":
+        print("Cerrando el programa. ")
+        break
+
+
+    elif choice == "1":
         while True:
             m = input("introduce el nombre del alumno nuevo ").title()
 
@@ -18,12 +26,14 @@ while True:
             if m in sistema2:
                 print("Alumno encontrado.")
                 #recorre con un for 
-                for nota in sistema2[m].items(): #recorre los items del alumno encontrado
+                for nota in sistema2[m].items(): #recorre los items del alumno Nuevo encontrado
                     promedio = sum(sistema2[m].values()) / len(sistema2[m]) #una variable
                     #que suma los valores del alumno y los divide por la cantidad de materias usando len
                 #impimir los resultados llamando el alumno y el promedio
                 print(f"promedio de {m} es: {promedio:.2f}")
-                exit() # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
+                # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
+                exit() #para salir por completo del programa
+
             #repite la pregunta hasta que encuentre un alumno valido
             else:
                 print("Alumno nuevo no encontrado. Inténtalo de nuevo")
@@ -41,8 +51,11 @@ while True:
                     promedio = sum(sistema[p].values()) / len(sistema[p]) #una variable
                     #que suma los valores del alumno y los divide por la cantidad de materias usando len
                 #impimir los resultados llamando el alumno y el promedio
-                print(f"promedio de {p} es: {promedio:.2f}") # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
+                print(f"promedio de {p} es: {promedio:.2f}")
+                exit() # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
             #repite la pregunta hasta que encuentre un alumno valido
             else:
                 print("Alumno no encontrado. Inténtalo de nuevo")
-
+    else:
+        print("Opción no válida. Inténtalo de nuevo.")
+        print("=========================================")
