@@ -4,21 +4,45 @@ sistema = {
     "Maria" : {"matematicas":50, "Datos y algoritmos":90, "Habilidades TIC": 70},
     "Adrian":{"matematicas": 70, "Datos y algoritmos": 60, "Habilidades TIC": 60}
 }
-
-#Validador de alumnos pedido en consola
+sistema2 = {"Sofia": {"matematicas": 90, "Datos y algoritmos": 80, "Habilidades TIC": 85},
+}
 while True:
-    p = input("introduce el nombre del alumno ").title()
+    print("Bienvenido elige si quieres saber el promedio de los alumnos nuevos(1) o saber el promedio de un alumno Ya registrados(2).")
+    choice = input("Elige una opción: ")
 
-    #busca si el nombre ingresado esta en el diccionario
-    if p in sistema:
-        print("Alumno encontrado.")
-        #recorre con un for 
-        for nota in sistema[p].items(): #recorre los items del alumno encontrado
-            promedio = sum(sistema[p].values()) / len(sistema[p]) #una variable
-            #que suma los valores del alumno y los divide por la cantidad de materias usando len
-        #impimir los resultados llamando el alumno y el promedio
-        print(f"promedio de {p} es: {promedio:.2f}") # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
-    #repite la pregunta hasta que encuentre un alumno valido
-    else:
-        print("Alumno no encontrado. Inténtalo de nuevo")
+    if choice == "1":
+        while True:
+            m = input("introduce el nombre del alumno nuevo ").title()
+
+            #busca si el nombre ingresado esta en el diccionario
+            if m in sistema2:
+                print("Alumno encontrado.")
+                #recorre con un for 
+                for nota in sistema2[m].items(): #recorre los items del alumno encontrado
+                    promedio = sum(sistema2[m].values()) / len(sistema2[m]) #una variable
+                    #que suma los valores del alumno y los divide por la cantidad de materias usando len
+                #impimir los resultados llamando el alumno y el promedio
+                print(f"promedio de {m} es: {promedio:.2f}")
+                exit() # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
+            #repite la pregunta hasta que encuentre un alumno valido
+            else:
+                print("Alumno nuevo no encontrado. Inténtalo de nuevo")
+
+    #Validador de alumnos pedido en consola
+    elif choice == "2":
+        while True:
+            p = input("introduce el nombre del alumno ").title()
+
+            #busca si el nombre ingresado esta en el diccionario
+            if p in sistema:
+                print("Alumno encontrado.")
+                #recorre con un for 
+                for nota in sistema[p].items(): #recorre los items del alumno encontrado
+                    promedio = sum(sistema[p].values()) / len(sistema[p]) #una variable
+                    #que suma los valores del alumno y los divide por la cantidad de materias usando len
+                #impimir los resultados llamando el alumno y el promedio
+                print(f"promedio de {p} es: {promedio:.2f}") # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
+            #repite la pregunta hasta que encuentre un alumno valido
+            else:
+                print("Alumno no encontrado. Inténtalo de nuevo")
 
