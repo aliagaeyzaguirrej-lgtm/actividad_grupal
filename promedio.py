@@ -7,7 +7,7 @@ sistema = {
 alumnos_nuevos = {"Sofia": {"matematicas": 90, "Datos y algoritmos": 80, "Habilidades TIC": 20},
 }
 
-
+#menu para elegir entre alumnos nuevos o ya registrados
 print(" (1) si quieres saber el promedio de los alumnos nuevos")
 print(" (2) si quieres saber el promedio de un alumno ya registrado")
 print(" (3) para salir del programa.")
@@ -27,12 +27,13 @@ while True:
 
         if nombre in alumnos_nuevos: #busca si el nombre ingresado esta en el diccionario
             print("Alumno encontrado.")
-            if len(alumnos_nuevos[nombre]) > 0: #verifica                      
-                    notas = alumnos_nuevos[nombre].values()
-                    promedio = sum(notas) / len(notas)
+            if len(alumnos_nuevos[nombre]) > 0: #verifica si el alumno tiene notas ingresadas                
+                    notas = alumnos_nuevos[nombre].values()#toma las notas del alumno encontrado
+
+                    promedio = sum(notas) / len(notas) #divide las notas totales por la cantidad de materias
             print(f"El promedio de {nombre} es: {promedio:.2f}")
         else:
-            print(f"El alumno {nombre} está registrado, pero no tiene notas ingresadas.")
+            print(f"El alumno {nombre} no está registrado o no tiene notas ingresadas.")
                 # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
             break #break para cerrar el ciclo y volver al menu principal
             #repite la pregunta hasta que encuentre un alumno valido
@@ -41,11 +42,9 @@ while True:
     elif choice == "2":
         while True:
             p = input("introduce el nombre del alumno o 0 para salir").title()
-
             if p == "0":
                 print("Cerrando el programa.")
                 break
-
         #busca si el nombre ingresado esta en el diccionario
             elif p in sistema:
                 print("Alumno encontrado.")
