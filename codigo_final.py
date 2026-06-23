@@ -103,23 +103,23 @@ while True: #while true para repetir el menu hasta el usuario desida salir
                         #repite la pregunta hasta que encuentre un alumno valido
                    
     #Validador de alumnos pedido en consola
-                elif choice == "2":
-        
-                    p = input("introduce el nombre del alumno ya registrado: ").title()
+                if choice == "2":
+                    while True:#while para repetir la pregunta hasta que encuentre un alumno valido
+                        p = input("introduce el nombre del alumno ya registrado: ").title()
 
                     #busca si el nombre ingresado esta en el diccionario
-                    if p in sistema:#aqui verificamos si p esta en el diccionario principal
-                        print("---ALUMNO ENCONTRADO---")
-                    #recorre con un for 
-                        for nota in sistema[p].items(): #recorre los items del alumno encontrado
-                            promedio = sum(sistema[p].values()) / len(sistema[p]) #una variable
-                     #que suma los valores del alumno y los divide por la cantidad de materias usando len
-                    #impimir los resultados llamando el alumno y el promedio
-                        print(f"promedio de {p} es: {promedio}")
+                        if p in sistema:#aqui verificamos si p esta en el diccionario principal
+                            print("---ALUMNO ENCONTRADO---")
+                    
+                            promedio = sum(sistema[p].values()) / len(sistema[p]) # sumamos total de notas y divide por cantidad de notas
+                            #que suma los valores del alumno y los divide por la cantidad de materias usando len
+                            #impimir los resultados llamando el alumno y el promedio
+                            print(f"promedio de {p} es: {promedio}")
+                            break 
                     # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
                     #repite la pregunta hasta que encuentre un alumno valido
-                    else:
-                        print("ALUMNO NO ENCONTRADO. INTENTELO DE NUEVO")
+                        else:
+                            print("ALUMNO NO ENCONTRADO. INTENTELO DE NUEVO")
                 else:
                     print("Opción no válida. Inténtalo de nuevo.")
                     print("=========================================")
