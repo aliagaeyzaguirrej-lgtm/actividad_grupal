@@ -32,7 +32,7 @@ while True:
                     notas = alumnos_nuevos[nombre].values()#toma las notas del alumno encontrado
                     promedio = sum(notas) / len(notas) #divide las notas totales por la cantidad de materias
 
-            print(f"El promedio de {nombre} es: {promedio:.2f}")
+            print(f"El promedio de {nombre} es: {round(promedio, 2)}")
         else:
             print(f"El alumno {nombre} no está registrado o no tiene notas ingresadas.")
                 # print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
@@ -49,7 +49,7 @@ while True:
                 promedio =sum(sistema[p].values()) /  len(sistema[p]) #una variable
                 #que suma los valores del alumno y los divide por la cantidad de materias usando len
             #impimir los resultados llamando el alumno y el promedio
-                print(f"promedio de {p} es: {promedio:.2f}")# print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
+                print(f"promedio de {p} es: {round(promedio, 2)}# print para mostrar resultados y se utiliza para mostrar hasta cuantos decimales mostrar
                 break #para salir del ciclo y volver al menu principal
             #repite la pregunta hasta que encuentre un alumno valido
             else:
