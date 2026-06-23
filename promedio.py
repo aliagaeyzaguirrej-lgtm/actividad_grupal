@@ -4,7 +4,7 @@ sistema = {
     "Maria" : {"matematicas":50, "Datos y algoritmos":90, "Habilidades TIC": 70},
     "Adrian":{"matematicas": 70, "Datos y algoritmos": 60, "Habilidades TIC": 60}
 }
-alumnos_nuevos = {"Sofia": {"matematicas": 90, "Datos y algoritmos": 80, "Habilidades TIC": 20},
+alumnos_nuevos = {
 }
 
 #menu para elegir entre alumnos nuevos o ya registrados
